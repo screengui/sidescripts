@@ -1,0 +1,64 @@
+-- Rainbow Nametag ESP
+-- Made by PurpleApple#9562/Asxtz on pastebin/screengui on github
+-- Does not stop
+
+-- Services
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+
+-- Functions
+local function createRainbowNametag(player)
+    local nametag = Instance.new("BillboardGui")
+    nametag.Adornee = player.Character:WaitForChild("Head")
+    nametag.Size = UDim2.new(0, 200, 0, 40)
+    nametag.StudsOffset = Vector3.new(0, 3, 0)
+    nametag.Name = player.Name.."Nametag"
+
+    local textLabel = Instance.new("TextLabel")
+    textLabel.Parent = nametag
+    textLabel.Size = UDim2.new(1, 0, 1, 0)
+    textLabel.Text = player.Name
+    textLabel.TextScaled = false  
+    textLabel.TextSize = 20       
+    textLabel.TextColor3 = Color3.new(1, 1, 1)
+    textLabel.BackgroundTransparency = 1
+    textLabel.Font = Enum.Font.SourceSansBold
+    textLabel.TextStrokeTransparency = 0.5
+    textLabel.TextStrokeColor3 = Color3.new(0, 0, 0)
+
+    local rainbowFunction = function()
+        local hue = (tick() * 30) % 360
+        textLabel.TextStrokeColor3 = Color3.fromHSV(hue / 360, 1, 1)
+        textLabel.TextColor3 = Color3.fromHSV(hue / 360, 1, 1)
+    end
+
+    RunService.Heartbeat:Connect(rainbowFunction)
+
+    nametag.Parent = workspace.CurrentCamera
+end
+
+-- Player Events
+local function onPlayerAdded(player)
+    player.CharacterAdded:Connect(function()
+        createRainbowNametag(player)
+    end)
+
+    player.CharacterRemoving:Connect(function()
+        local nametag = workspace.CurrentCamera:FindFirstChild(player.Name.."Nametag")
+
+        if nametag then
+            nametag:Destroy()
+        end
+    end)
+
+    
+    createRainbowNametag(player)
+end
+
+-- Connect function to new players
+Players.PlayerAdded:Connect(onPlayerAdded)
+
+-- Create nametags for existing players
+for _, player in pairs(Players:GetPlayers()) do
+    onPlayerAdded(player)
+end

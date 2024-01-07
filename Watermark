@@ -1,6 +1,6 @@
 -- Create a ScreenGui
 local wam = Instance.new("ScreenGui")
-wam.Name = "watermark"
+wam.Name = "watermarkGui"
 wam.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
 -- Create a TextLabel
@@ -13,5 +13,16 @@ wm.TextScaled = true
 wm.BackgroundTransparency = 1
 wm.Font = "FredokaOne"
 wm.TextColor3 = Color3.new(255, 255, 255)
-wm.visible = false
 wm.Parent = wam
+
+function wmOn()
+  wm.visible = true
+end
+
+function wmOff()
+  wm.visible = false
+end
+
+if getgenv().wm == false then
+  wmOff()
+end

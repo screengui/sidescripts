@@ -1,0 +1,17 @@
+-- Create a ScreenGui
+local wam = Instance.new("ScreenGui")
+wam.Name = "ByteLabelGui"
+wam.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+-- Create a TextLabel
+local wm = Instance.new("TextLabel")
+wm.Name = "watermark"
+wm.Text = "ByteHub"
+wm.Size = UDim2.new(0, 170, 0, 50)
+wm.Position = UDim2.new(1, -270, 0, 30)
+wm.TextScaled = true
+wm.BackgroundTransparency = 1
+wm.Font = "FredokaOne"
+wm.TextColor3 = Color3.new(255, 255, 255)
+wm.visible = false
+wm.Parent = wam

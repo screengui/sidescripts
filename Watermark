@@ -1,6 +1,6 @@
 -- Create a ScreenGui
 local wam = Instance.new("ScreenGui")
-wam.Name = "ByteLabelGui"
+wam.Name = "watermark"
 wam.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 
 -- Create a TextLabel

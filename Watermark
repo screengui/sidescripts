@@ -15,14 +15,3 @@ wm.Font = "FredokaOne"
 wm.TextColor3 = Color3.new(255, 255, 255)
 wm.Parent = wam
 
-function wmOn()
-  wm.visible = true
-end
-
-function wmOff()
-  wm.visible = false
-end
-
-if getgenv().wm == false then
-  wmOff()
-end

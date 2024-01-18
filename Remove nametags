@@ -1,0 +1,7 @@
+for _, player in pairs(Players:GetPlayers()) do
+        local nametag = workspace.CurrentCamera:FindFirstChild(player.Name.."Nametag")
+
+        if nametag then
+            nametag:Destroy()
+        end
+    end

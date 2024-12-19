@@ -1,4 +1,5 @@
 --creds Seven7
+local CoreGui = game:GetService("CoreGui")
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "Toggleui"
 ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
@@ -34,7 +35,7 @@ Corner2.CornerRadius = UDim.new(0.2, 0)
 Corner2.Parent = Image
 
 Toggle.MouseButton1Click:Connect(function()
-    if gethui():FindFirstChild("ScreenGui") then
-        gethui().ScreenGui.Frame.Visible = not gethui().ScreenGui.Frame.Visible
+    if CoreGui:FindFirstChild("ScreenGui") then
+        CoreGui.ScreenGui.Enabled = not CoreGui.ScreenGui.Enabled
     end
 end)

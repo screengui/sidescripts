@@ -35,6 +35,6 @@ Corner2.Parent = Image
 
 Toggle.MouseButton1Click:Connect(function()
     if gethui():FindFirstChild("ScreenGui") then
-        gethui().ScreenGui.Enabled = not gethui().ScreenGui.Enabled
+        gethui().ScreenGui.Visible = not gethui().ScreenGui.Visible
     end
 end)

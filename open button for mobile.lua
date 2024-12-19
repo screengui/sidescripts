@@ -1,37 +1,39 @@
---Gui to Lua
-local VirtualInputManager = game:GetService("VirtualInputManager")
+--creds Seven7
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "Toggleui"
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = false
 
-local frameSize = UDim2.new(0, 64, 0, 64)
-local framePosition = UDim2.new(0.5, 0, 0.5, 0) -- Centered
-local frameColor = Color3.fromRGB(24,24,24) -- Gray
+local Toggle = Instance.new("TextButton")
+Toggle.Name = "Toggle"
+Toggle.Parent = ScreenGui
+Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Toggle.BackgroundTransparency = 0.5
+Toggle.Position = UDim2.new(0, 0, 0.454706937, 0)
+Toggle.Size = UDim2.new(0, 50, 0, 50)
+Toggle.Font = Enum.Font.SourceSans
+Toggle.Text = ""
+Toggle.TextColor3 = Color3.fromRGB(248, 248, 248)
+Toggle.TextSize = 18.000
+Toggle.Draggable = true
 
-local screenGui = Instance.new("ScreenGui")
-screenGui.Name = "DraggableFrameGui"
-screenGui.ResetOnSpawn = false
-screenGui.DisplayOrder = 10
+local Corner = Instance.new("UICorner")
+Corner.CornerRadius = UDim.new(0.2, 0)
+Corner.Parent = Toggle
 
-local buttonSize = UDim2.new(0, 45, 0, 45)
-local button = Instance.new("TextButton")
-button.Name = "Button"
-button.Size = frameSize
-button.AnchorPoint = Vector2.new(0, 0) -- Top-left alignment
-button.Position = UDim2.new(0.25, 0, 0.05, 0)
-button.BackgroundColor3 = frameColor
-button.Parent = screenGui
-button.Text = "Open"
-button.TextColor3 = Color3.fromRGB(255, 255, 255)
-button.Font = Enum.Font.FredokaOne
-button.TextScaled = true
-button.ZIndex = 0
-button.Active = true
-button.Draggable = true
+local Image = Instance.new("ImageLabel")
+Image.Name = "Icon"
+Image.Parent = Toggle
+Image.Size = UDim2.new(1, 0, 1, 0)
+Image.BackgroundTransparency = 1
+Image.Image = "rbxassetid://117239677500065" 
 
-local frameCorner = Instance.new("UICorner")
-frameCorner.CornerRadius = UDim.new(0.2, 0) 
-frameCorner.Parent = button
+local Corner2 = Instance.new("UICorner")
+Corner2.CornerRadius = UDim.new(0.2, 0)
+Corner2.Parent = Image
 
-button.MouseButton1Click:Connect(function()
-  VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.LeftControl, false, game)
+Toggle.MouseButton1Click:Connect(function()
+    if gethui():FindFirstChild("ScreenGui") then
+        gethui().ScreenGui.Enabled = not gethui().ScreenGui.Enabled
+    end
 end)
-
-screenGui.Parent = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")

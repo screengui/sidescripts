@@ -10,7 +10,7 @@ local playerList = {}
 
 -- Create GUI
 local ScreenGui = Instance.new("ScreenGui")
-ScreenGui.Parent = LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.Parent = game.CoreGui
 
 local ToggleButton = Instance.new("TextButton")
 ToggleButton.Size = UDim2.new(0, 150, 0, 50)

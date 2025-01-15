@@ -1,0 +1,102 @@
+if game.Players.LocalPlayer.PlayerGui:FindFirstChild("CF") then game.Players.LocalPlayer.PlayerGui:FindFirstChild("CF"):Destroy() 
+end
+
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "CF"
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+local mainFrame = Instance.new("Frame")
+mainFrame.Size = UDim2.new(0, 300, 0, 200)
+mainFrame.Position = UDim2.new(0.5, -150, 0.5, -100)
+mainFrame.BackgroundColor3 = Color3.fromRGB(100, 100, 100)
+mainFrame.Parent = screenGui
+
+-- Create the Toggle Button for Coin Flip
+local toggleButton = Instance.new("TextButton")
+toggleButton.Size = UDim2.new(0, 200, 0, 50)
+toggleButton.Position = UDim2.new(0, 50, 0, 60)
+toggleButton.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+toggleButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+toggleButton.Text = "Flip a Coin!"
+toggleButton.Parent = mainFrame
+
+local creditsLabel = Instance.new("TextLabel")
+creditsLabel.Size = UDim2.new(0, 200, 0, 50)
+creditsLabel.Position = UDim2.new(0, 50, 0, 10)
+creditsLabel.BackgroundTransparency = 1
+creditsLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+creditsLabel.Text = "Made By: Purple Apple"
+creditsLabel.Parent = mainFrame
+
+-- Create the Result Label
+local resultLabel = Instance.new("TextLabel")
+resultLabel.Size = UDim2.new(0, 200, 0, 50)
+resultLabel.Position = UDim2.new(0, 50, 0, 120)
+resultLabel.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+resultLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+resultLabel.Text = "Result: None"
+resultLabel.Parent = mainFrame
+
+-- Create the Button to Toggle UI Visibility
+local toggleVisibilityButton = Instance.new("TextButton")
+toggleVisibilityButton.Size = UDim2.new(0, 200, 0, 50)
+toggleVisibilityButton.Position = UDim2.new(0, 0, 0.5, 0)
+toggleVisibilityButton.BackgroundColor3 = Color3.fromRGB(100, 50, 50)
+toggleVisibilityButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+toggleVisibilityButton.Text = "Open"
+toggleVisibilityButton.Parent = screenGui
+
+-- Function to simulate the coin flip
+local function flipCoin()
+    local outcome = math.random(1, 2)  -- 1 is Heads, 2 is Tails
+    if outcome == 1 then
+        return "Heads"
+    else
+        return "Tails"
+    end
+end
+
+-- Toggle Button functionality to flip the coin
+toggleButton.MouseButton1Click:Connect(function()
+    local result = flipCoin()
+    resultLabel.Text = "Result: " .. result
+end)
+
+-- Toggle Visibility Button functionality
+toggleVisibilityButton.MouseButton1Click:Connect(function()
+  mainFrame.Visible = not mainFrame.Visible  -- Toggles the UI visibility
+  if mainFrame.Visible then
+    toggleVisibilityButton.Text = "Close"
+  else
+    toggleVisibilityButton.Text = "Open"
+  end
+end)
+
+-- Draggable Frame Script (Mobile + Desktop Support)
+local dragging = false
+local dragInput, dragStart, startPos
+
+local UserInputService = game:GetService("UserInputService")
+
+mainFrame.InputBegan:Connect(function(input, gameProcessed)
+    if gameProcessed then return end
+    -- Handle Mouse and Touch Inputs
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = true
+        dragStart = input.Position
+        startPos = mainFrame.Position
+    end
+end)
+
+mainFrame.InputChanged:Connect(function(input)
+    if dragging and (input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch) then
+        local delta = input.Position - dragStart
+        mainFrame.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+    end
+end)
+
+mainFrame.InputEnded:Connect(function(input)
+    if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+        dragging = false
+    end
+end)

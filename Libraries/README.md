@@ -1,6 +1,6 @@
 <h1>Highlight ESP Library</h1>
 <b>Step 1: Loading the Library</b><br>
-*This is required to make the esp work
+* This is required to make the esp work
 <br>
 
 ```lua

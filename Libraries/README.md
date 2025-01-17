@@ -6,3 +6,5 @@
 ```lua
 local ESPLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/screengui/sidescripts/refs/heads/main/Libraries/Highlight-ESP",true))()
 ```
+
+<b>Step 2: Settings</b>

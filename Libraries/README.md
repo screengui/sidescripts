@@ -3,5 +3,5 @@
 This is required to make the esp work
 
 ```lua
-local ESPLib = 
+local ESPLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/screengui/sidescripts/refs/heads/main/Libraries/Highlight-ESP",true))()
 ```

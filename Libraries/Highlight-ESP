@@ -1,0 +1,36 @@
+local lib = {}
+local players = game.Players
+local LP = players.LocalPlayer
+
+-- Default values
+_G.Player = _G.Player -- set to everyone if nil
+_G.OutlineColor = _G.OutlineColor or Color3.fromRGB(255, 255, 255) -- set to default if nil
+_G.FillColor = _G.FillColor or Color3.fromRGB(255, 0, 0) -- set to default if nil
+_G.OutlineTransparency = _G.OutlineTransparency or 0 -- set to default if nil
+_G.FillTransparency = _G.FillTransparency or 0.5 -- set to default if nil
+
+function lib:HighlightESP()
+  while getgenv().HighlightESP do
+    for _, player in pairs(players:GetPlayers()) do
+      if player ~= LP and player.Character and not player.Character:FindFirstChild("Highlight") then
+        local highlight = Instance.new("Highlight")
+        highlight.Parent = _G.Player or player.Character
+        highlight.Adornee = _G.Player
+        highlight.FillColor = _G.FillColor
+        highlight.OutlineColor = _G.OutlineColor
+        highlight.FillTransparency = _G.FillTransparency
+        highlight.OutlineTransparency = _G.OutlineTransparency
+      end
+    end
+    task.wait()
+  end
+  
+  for _, player in pairs(players:GetPlayers()) do
+    local highlight = player.Character and player.Character:FindFirstChild("Highlight")
+    if highlight then
+      highlight:Destroy()
+    end
+  end
+end
+
+return lib

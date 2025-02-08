@@ -39,4 +39,4 @@ function buildCircle(id, radius, yOffset, blockCount)
 end
 
 -- **Example Usage**
-buildCircle(_G.ID, _G.Radius, _G.Y, _G.BCount) -- id, radius, Y-offset, block count
+buildCircle(_G.CID, _G.CRadius, _G.CY, _G.CBCount) -- id, radius, Y-offset, block count

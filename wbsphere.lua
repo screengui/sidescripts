@@ -36,6 +36,6 @@ function placeBlockInSphere(id, radius, numBlocks, yOffset)
         blocksPlaced = blocksPlaced + 1
     end
 end
-print("ok")
+
 -- **Usage Example**:
 placeBlockInSphere(_G.SID, _G.SRadius, _G.SBCount, _G.SY) -- ID, Radius, Block Count, Y-Offset

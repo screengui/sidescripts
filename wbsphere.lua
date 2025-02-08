@@ -30,8 +30,9 @@ function placeBlockInSphere(id, radius, numBlocks, yOffset)
 
         -- Place block at the calculated position
         local placementPosition = Vector3.new(x, yPos, z)
-        Stamp:InvokeServer(id, CFrame.new(placementPosition))
-
+        task.spawn(function()
+        	Stamp:InvokeServer(id, CFrame.new(placementPosition))
+        end)
         blocksPlaced = blocksPlaced + 1
     end
 end

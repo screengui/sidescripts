@@ -1,6 +1,5 @@
 local Stamp = game.ReplicatedStorage.BuildingBridge.Stamp
 
--- Function to find the plot based on player's name
 function findPlot(n)
     for _, v in pairs(workspace.BuildingAreas:GetChildren()) do
         if v.Player.Value == n then

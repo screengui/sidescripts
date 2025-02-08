@@ -98,7 +98,7 @@ local function placeMaze(blockID)
                 local worldZ = basePosition.Z + (z - mazeSize / 2) * 4
 
                 -- Stack 4 blocks high
-                for i = 0, (_G.MG1Height - 1) do
+                for i = 0, (_G.MGHeight - 1) do
                     task.spawn(function()
                         local worldY = startY + (i * 4)
                         Stamp:InvokeServer(blockID, CFrame.new(worldX, worldY, worldZ))
@@ -109,5 +109,5 @@ local function placeMaze(blockID)
     end
 end
 
--- **Usage Example**
-placeMaze(_G.MG1ID) -- Block ID for walls
+-- **Usage Example**	
+placeMaze(_G.MGID) -- Block ID for walls

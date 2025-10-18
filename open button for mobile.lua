@@ -2,7 +2,7 @@
 local CoreGui = game:GetService("CoreGui")
 local ScreenGui = Instance.new("ScreenGui")
 ScreenGui.Name = "Toggleui"
-ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui
+ScreenGui.Parent = CoreGui
 
 local Toggle = Instance.new("TextButton")
 Toggle.Name = "Toggle"

@@ -28,3 +28,7 @@ local Toggle = Tabs.Main:AddToggle("MyToggle",
         end
     end 
 })
+
+_G.Fluent = Fluent
+_G.Window = Window
+_G.Tabs = Tabs

@@ -27,7 +27,7 @@ Image.Name = "Icon"
 Image.Parent = Toggle
 Image.Size = UDim2.new(1, 0, 1, 0)
 Image.BackgroundTransparency = 1
-Image.Image = "rbxassetid://113009383175910" 
+Image.Image = "rbxassetid://72731518878780" 
 
 local Corner2 = Instance.new("UICorner")
 Corner2.CornerRadius = UDim.new(0.2, 0)

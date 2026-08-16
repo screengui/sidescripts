@@ -1,6 +1,6 @@
-# NotificationLibrary Documentation
+# ByteNotif Documentation
 
-`NotificationLibrary` is a lightweight, customizable Roblox ModuleScript designed for creating animated toast notifications in player interfaces.
+`ByteNotif` is a lightweight, customizable Roblox ModuleScript designed for creating animated toast notifications in player interfaces.
 
 ---
 

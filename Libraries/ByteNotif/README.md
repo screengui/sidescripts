@@ -6,14 +6,10 @@
 
 ## Installation & Setup
 
-1. Create a **ModuleScript** inside `ReplicatedStorage`.
-2. Rename it to `NotificationLibrary`.
-3. Paste the source code inside the ModuleScript.
-4. Require the library from any `LocalScript`:
+1. Put this at the very top of your script:
 
 ```lua
-local NotificationLibrary = require(game:GetService("ReplicatedStorage"):WaitForChild("NotificationLibrary"))
-
+local NotificationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/screengui/sidescripts/refs/heads/main/Libraries/ByteNotif/NotificationLibrary.lua"))()
 ```
 
 ---

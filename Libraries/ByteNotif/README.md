@@ -6,11 +6,13 @@
 
 ## Installation & Setup
 
-1. Put this at the very top of your script:
+1. Initialize the Library:
 
 ```lua
 local NotificationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/screengui/sidescripts/refs/heads/main/Libraries/ByteNotif/NotificationLibrary.lua"))()
 ```
+
+- This is REQUIRED for the notification library to work.
 
 ---
 

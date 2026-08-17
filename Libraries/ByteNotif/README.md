@@ -88,6 +88,29 @@ NotificationLibrary.Notify({
 
 ```
 
+### Notification Sounds
+
+```lua
+NotificationLibrary.Notify({
+    Title = "Rare Loot Found!",
+    Text = "You obtained a Golden Sword.",
+    SoundId = "rbxassetid://9114223178",
+    Volume = 0.8,
+    Pitch = 1.2
+})
+
+```
+
+**Muted Notification:**
+
+```lua
+NotificationLibrary.Notify({
+    Title = "Silent Alert",
+    Text = "This message will not play a sound.",
+    PlaySound = false
+})
+
+```
 ---
 
 ## Features & Architecture

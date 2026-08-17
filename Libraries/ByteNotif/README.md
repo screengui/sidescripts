@@ -101,7 +101,7 @@ NotificationLibrary.Notify({
 
 ```
 
-**Muted Notification:**
+### Muted Notification:
 
 ```lua
 NotificationLibrary.Notify({

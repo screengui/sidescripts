@@ -32,6 +32,10 @@ Creates and displays a new notification on the player's screen with slide-in/sli
 | `Type` | `string` | `"Info"` | Notification visual theme preset (`"Info"`, `"Success"`, `"Warning"`, `"Error"`). |
 | `Color` | `Color3` | *Based on `Type*` | Custom accent color for the left border and progress bar. Overrides preset themes. |
 | `PlaySound` | `boolean` | true | Set to `false` mute the notification completely. |
+| `SoundId` | `string` | Presets by `Type` | Roblox Asset ID string (e.g., `"rbxassetid://1234567"`). |
+| `Volume` | `number` | `0.5` | Loudness of the sound (`0` to `1`+). |
+| `Pitch` | `number` | `1` | Pitch/playback speed multiplier. |
+
 ---
 
 ## Themes & Defaults

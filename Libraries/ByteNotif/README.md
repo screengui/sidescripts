@@ -31,7 +31,7 @@ Creates and displays a new notification on the player's screen with slide-in/sli
 | `Duration` | `number` | `4` | How long (in seconds) the notification stays visible before auto-dismissing. |
 | `Type` | `string` | `"Info"` | Notification visual theme preset (`"Info"`, `"Success"`, `"Warning"`, `"Error"`). |
 | `Color` | `Color3` | *Based on `Type*` | Custom accent color for the left border and progress bar. Overrides preset themes. |
-
+| `PlaySound` | `boolean` | true | Set to `false` mute the notification completely. |
 ---
 
 ## Themes & Defaults

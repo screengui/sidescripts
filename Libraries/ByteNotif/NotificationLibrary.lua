@@ -161,7 +161,7 @@ function NotificationLibrary.Notify(config)
 	end)
 end
 
-return NotificationLibrary	Error   = Color3.fromRGB(231, 76, 60)
+return NotificationLibrary
 }
 
 function NotificationLibrary.Notify(config)

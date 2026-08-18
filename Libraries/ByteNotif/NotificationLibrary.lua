@@ -161,9 +161,6 @@ function NotificationLibrary.Notify(config)
 	end)
 end
 
-return NotificationLibrary
-}
-
 function NotificationLibrary.Notify(config)
 	config = config or {}
 	local titleText = config.Title or "Notification"

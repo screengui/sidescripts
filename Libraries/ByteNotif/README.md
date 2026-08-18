@@ -1,4 +1,4 @@
-# <div align="center">âš¡ ByteNotif</div>
+# <div align="center">⚡ ByteNotif</div>
 
 <div align="center">
 
@@ -12,18 +12,18 @@ A modern, lightweight, and customizable Roblox notification library designed for
 
 ---
 
-## âœ¨ Features
+## ✨ Features
 
-- ðŸŽ¨ **Built-in & Custom Themes:** Standard presets (`Info`, `Success`, `Warning`, `Error`) with full custom `Color3` support.
-- ðŸŽµ **Sound Integration:** Automatically plays type-specific audio cues with configurable asset IDs, volume, and pitch.
-- ðŸ”˜ **Interactive Buttons:** Attach multi-action buttons (e.g., *Accept / Decline*) with custom callback functions.
-- âš¡ **Fluid Animations:** Powered by `TweenService` for smooth entry, progress bar timers, and slide-out exits.
-- ðŸ‘† **Flexible Dismissal:** Supports click-to-dismiss, top-right `Ã—` close buttons, or non-dismissable pinned alerts.
-- ðŸ§¹ **Automatic Garbage Collection:** Automatically cleans up UI instances, audio objects, and active tweens to prevent memory leaks.
+- 🎨 **Built-in & Custom Themes:** Standard presets (`Info`, `Success`, `Warning`, `Error`) with full custom `Color3` support.
+- 🎵 **Sound Integration:** Automatically plays type-specific audio cues with configurable asset IDs, volume, and pitch.
+- 🔘 **Interactive Buttons:** Attach multi-action buttons (e.g., *Accept / Decline*) with custom callback functions.
+- ⚡ **Fluid Animations:** Powered by `TweenService` for smooth entry, progress bar timers, and slide-out exits.
+- 👆 **Flexible Dismissal:** Supports click-to-dismiss, top-right ` ×` close buttons, or non-dismissable pinned alerts.
+- 🧹 **Automatic Garbage Collection:** Automatically cleans up UI instances, audio objects, and active tweens to prevent memory leaks.
 
 ---
 
-## ðŸš€ Quick Setup
+## 🚀 Quick Setup
 
 Initialize `ByteNotif` in any `LocalScript` or executor environment:
 
@@ -33,7 +33,7 @@ local NotificationLibrary = loadstring(game:HttpGet("https://raw.githubuserconte
 
 ---
 
-## ðŸ“š API Reference
+## 📚 API Reference
 
 ### `NotificationLibrary.Notify(config)`
 
@@ -58,7 +58,7 @@ Creates and displays a new notification toast on the player's screen.
 
 ---
 
-#### ðŸ”˜ Action Button Configuration (`Buttons` Array)
+#### 🔘 Action Button Configuration (`Buttons` Array)
 
 Each button configuration object inside the `Buttons` array accepts the following parameters:
 
@@ -71,7 +71,7 @@ Each button configuration object inside the `Buttons` array accepts the followin
 
 ---
 
-## ðŸŽ¨ Theme Presets
+## 🎨 Theme Presets
 
 | Theme | Accent Color (`Color3.fromRGB`) | Default Audio Asset | Preview Style |
 | :--- | :--- | :--- | :--- |
@@ -82,7 +82,7 @@ Each button configuration object inside the `Buttons` array accepts the followin
 
 ---
 
-## ðŸ’» Code Examples
+## 💻 Code Examples
 
 ### Standard Information Toast
 
@@ -170,7 +170,7 @@ NotificationLibrary.Notify({
 
 ---
 
-## âš™ï¸ Architecture & Mechanics
+## ⚙️ Architecture & Mechanics
 
 - **Auto-Stacking Container:** Uses a client-side `ScreenGui` containing a `UIListLayout` aligned to `Bottom-Right` (`UDim2.new(1, -330, 0, 10)`).
 - **Dynamic Resizing:** Cards auto-expand vertically (from `70px` to `95px`) when embedded buttons are supplied.
@@ -180,6 +180,6 @@ NotificationLibrary.Notify({
 
 <div align="center">
 
-Made with â¤ï¸ for Roblox Luau Developers
+Made with ❤️ by screengui.
 
 </div>
